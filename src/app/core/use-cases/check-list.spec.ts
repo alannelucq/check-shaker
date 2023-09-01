@@ -36,10 +36,17 @@ describe('Check list uses cases', () => {
       .build();
     const checkListHandler = createCheckListHandler(checkList);
     checkListHandler.removeTask('id-task').subscribe();
-
-    const expectedCheckList = new StubCheckListBuilder().withoutTask().build();
     checkListHandler.retrieve(checkList.id).subscribe(checklist => {
-      verifyCheckList(checklist, expectedCheckList);
+      verifyCheckList(checklist, new StubCheckListBuilder().withoutTask().build());
+      done();
+    });
+  });
+
+  it('should rename check-list', done => {
+    const checkListHandler = createCheckListHandler(defaultCheckList);
+    checkListHandler.rename(defaultCheckList.id, 'Renamed check-list').subscribe();
+    checkListHandler.retrieve(defaultCheckList.id).subscribe(checklist => {
+      verifyCheckList(checklist, new StubCheckListBuilder().withName('Renamed check-list').build());
       done();
     });
   });

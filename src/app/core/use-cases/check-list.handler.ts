@@ -9,11 +9,15 @@ export default class CheckListHandler {
         return this.source.retrieve(id);
     }
 
-    addTask(idCheckList: string, task: string) {
-        return this.source.addTask(idCheckList, task);
+    addTask(checkListId: string, task: string) {
+        return this.source.addTask(checkListId, task);
     }
 
     removeTask(taskId: string) {
         return this.source.removeTask(taskId);
+    }
+
+    rename(checkListId: string, name: string) {
+        return this.source.rename(checkListId, name);
     }
 }

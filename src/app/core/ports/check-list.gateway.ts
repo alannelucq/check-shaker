@@ -8,4 +8,6 @@ export interface CheckListGateway {
     addTask(idCheckList: string, task: string): Observable<Task>;
 
     removeTask(taskId: string): Observable<void>;
+
+    rename(checkListId: string, name: string): Observable<CheckList>;
 }
