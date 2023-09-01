@@ -3,6 +3,11 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@views/*": ["src/app/views/*"]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -19,16 +24,12 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "esModuleInterop": true,
     "lib": [
       "ES2022",
       "dom"
     ],
-    "types": ["jest"],
-    "paths": {
-      "@core/*": ["src/app/core/*"],
-      "@shared/*": ["src/app/shared/*"],
-      "@views/*": ["src/app/views/*"]
-    }
+    "types": ["jest"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
