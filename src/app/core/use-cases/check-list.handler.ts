@@ -1,6 +1,6 @@
-import { CheckListGateway } from "../ports/check-list.gateway";
 import { Observable } from "rxjs";
-import { CheckList } from "../models/check-list.model";
+import { CheckListGateway } from "@core/ports/check-list.gateway";
+import { CheckList } from "@core/models/check-list";
 
 export class CheckListHandler {
     constructor(private source: CheckListGateway) { }

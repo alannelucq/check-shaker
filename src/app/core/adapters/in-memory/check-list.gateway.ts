@@ -1,9 +1,12 @@
 import { CheckListGateway } from "../../ports/check-list.gateway";
 import { Observable, of } from "rxjs";
-import { CheckList } from "../../models/check-list.model";
+import { CheckList } from "../../models/check-list";
 
 export class InMemoryCheckListGateway implements CheckListGateway {
+    constructor(private checkList: CheckList) {
+    }
+
     retrieve(id: string): Observable<CheckList> {
-      return of({ id: "id", name: "Check-list"});
+        return of(this.checkList);
     }
 }
