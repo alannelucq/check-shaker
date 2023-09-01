@@ -12,4 +12,8 @@ export default class CheckListHandler {
     addTask(idCheckList: string, task: string) {
         return this.source.addTask(idCheckList, task);
     }
+
+    removeTask(taskId: string) {
+        return this.source.removeTask(taskId);
+    }
 }

@@ -6,4 +6,6 @@ export interface CheckListGateway {
     retrieve(id: string): Observable<CheckList>;
 
     addTask(idCheckList: string, task: string): Observable<Task>;
+
+    removeTask(taskId: string): Observable<void>;
 }

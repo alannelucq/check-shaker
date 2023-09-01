@@ -16,4 +16,9 @@ export class InMemoryCheckListGateway implements CheckListGateway {
         this.checkList.tasks.push(newTask);
         return of(newTask);
     }
+
+    removeTask(taskId: string): Observable<void> {
+        this.checkList.tasks = this.checkList.tasks.filter(task => task.id !== taskId);
+        return of(void 0);
+    }
 }
